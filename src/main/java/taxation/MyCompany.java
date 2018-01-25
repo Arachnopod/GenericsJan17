@@ -19,12 +19,21 @@ public class MyCompany {
     }
   }
 
+  public static void collectClients(List<? super Individual> lt) {
+    lt.add(new Individual() {});
+//    for (Individual t : lt) {
+//      System.out.println(t);
+//    }
+  }
+
   public static void main(String[] args) {
     List<Taxable> ls = new ArrayList<>();
 
     calculateTaxes(ls);
 
     List<Individual> li = new ArrayList<>();
+
+    collectClients(li);
     calculateTaxes(li);
 
     Individual[] ia = {};

@@ -14,9 +14,15 @@ public class ClothingPair<E extends Sized & Colored> extends Pair<E> {
     super(left, right);
   }
 
-  public boolean isMatched() {
+  public /* <F,G>  more instance type vars may be declared */
+  boolean isMatched() {
     return getLeft().getSize() == getRight().getSize()
         && getLeft().getColor().equals(getRight().getColor());
+  }
+
+  public static <F extends Colored & Sized> boolean isMatched(F left, F right) {
+    return left.getColor().equals(right.getColor()) &&
+        left.getSize() == right.getSize();
   }
 
 }
